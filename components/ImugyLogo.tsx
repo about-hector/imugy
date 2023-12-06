@@ -1,23 +1,27 @@
 import { cn } from '@/lib/utils'
 import localFont from 'next/font/local'
-import { HTMLProps } from 'react'
+import Link, { LinkProps } from 'next/link'
 
 const imugy = localFont({
     src: '../public/fonts/osaka-japan/OsakaJapan.ttf',
     display: 'swap',
 })
 
-export default function ImugyLogo({className, ...props}: HTMLProps<HTMLDivElement>) {
+interface ImugyLogoProps extends LinkProps {
+    className?: string;
+}
+
+export default function ImugyLogo({className, ...props}: ImugyLogoProps) {
     return (
-        <div
+        <Link
             className={cn(
                 imugy.className,
-                "text-2xl hover:text-accent text-foreground",
+                "text-2xl hover:text-accent text-foreground cursor-pointer",
                 className
             )}
             {...props}
         >
             Imugy
-        </div>
+        </Link>
     )
 }
