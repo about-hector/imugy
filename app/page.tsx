@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import FeedGrid from '@/components/FeedGrid/FeedGrid'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
