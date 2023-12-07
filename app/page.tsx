@@ -23,7 +23,7 @@ export default async function Home({
             <SearchBox />
             <Suspense>
             {searchParams.tags ?
-            (<p className='mb-4 px-4'>
+            (<p className='mb-4 md:px-4'>
                 <span className='text-lg text-muted-foreground font-semibold'>Results for:{' '}</span> 
                 {tags}
             </p>) : null}
