@@ -9,10 +9,10 @@ export default async function Home({
     searchParams: SearchParams
 }) {
     let tags: string;
-    if (typeof searchParams.tags === 'string') {
+    if (searchParams.tags && typeof searchParams.tags === 'string') {
         tags = searchParams.tags.split(',').join(', ');
     } else {
-        throw new Error('searchParams.tags is not a string');
+        tags = ''
     }
     return (
         <main className="relative z-50 max-w-4xl mx-auto flex-col h-full px-4">
@@ -22,7 +22,11 @@ export default async function Home({
             </div>
             <SearchBox />
             <Suspense>
-                <p className='mb-4 px-4'><span className='text-lg text-muted-foreground font-semibold'>Results for:</span> {tags}</p>
+            {searchParams.tags ?
+            (<p className='mb-4 px-4'>
+                <span className='text-lg text-muted-foreground font-semibold'>Results for:{' '}</span> 
+                {tags}
+            </p>) : null}
                 <FeedGrid tags={searchParams.tags as string} />
             </Suspense>
         </main>
