@@ -27,7 +27,7 @@ export default function RootLayout({
                 >
                     <Header />
                     {children}
-                    <div className='pointer-events-none z-40 overlay'></div>
+                    <div className='pointer-events-none z-30 overlay'></div>
                 </ThemeProvider>
             </body>
         </html>
