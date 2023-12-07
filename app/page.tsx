@@ -21,8 +21,8 @@ export default async function Home({
                     <h1 className='text-4xl text-center font-bold mb-2 text-foreground'>Explore Flickr&apos;s public feeds</h1>
                     <p className='text-xs text-muted-foreground'>(sorry, there is porn sometimes. Enjoy)</p>
                 </div>
+                <SearchBox />
             </header>
-            <SearchBox />
             <main className="relative z-40 max-w-4xl mx-auto flex-col h-full px-4">
                 <Suspense>
                     {searchParams.tags ?
